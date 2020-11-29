@@ -1,0 +1,54 @@
+.header 
+    background: $header-back
+    -webkit-box-shadow: 2px 7px 20px -13px rgba(34, 60, 80, 0.09)
+    -moz-box-shadow: 2px 7px 20px -13px rgba(34, 60, 80, 0.09)
+    box-shadow: 2px 7px 20px -13px rgba(34, 60, 80, 0.09)
+
+    &__box 
+        padding: 15px 0
+        margin-bottom: 40px
+        display: flex
+        justify-content: space-between
+        align-items: center
+
+    &__logo 
+        font-size: 30px
+        span
+            font-weight: 600
+        & span:first-child 
+            color: $logo-green
+        & span:nth-child(2)
+            color: $logo-blue
+        p
+            font-size: 10px
+            max-width: 60px
+            display: inline-block
+            margin-left: 10px
+    
+    &__menu
+        display: flex 
+        align-items: center
+        justify-content: flex-start
+
+    &__link 
+        margin-right: 20px
+        display: block
+        transition: all .3s
+        &:hover 
+            color: #ccc
+    &__profile 
+        color: $link-blue
+        margin-right: 20px
+        display: flex
+        align-items: center
+        cursor: pointer
+        i 
+            margin-left: 5px
+    &__lang 
+        display: flex
+        align-items: center
+        cursor: pointer
+        i 
+            margin-left: 5px
+            
+            

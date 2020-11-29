@@ -1,0 +1,30 @@
+.table 
+    background: $white2
+    margin-bottom: 30px
+    border-radius: 5px
+    -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.09)
+    -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.09)
+    box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.09)
+
+    &__line 
+        display: grid
+        grid-template-columns: 30px 17% 15% 15% 20% 15% 15%
+        align-items: center
+        &--menu 
+            padding: 26px 6px
+            border-bottom: 1px solid $grey-light
+            color: $grey-dark
+        &--content 
+            padding: 16px 6px
+            i 
+                color: $red
+
+    .line
+        &--red 
+            height: 30px
+            width: 2px
+            background: $red
+    
+    &__menu-item
+        &--active 
+            cursor: pointer
