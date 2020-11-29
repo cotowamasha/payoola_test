@@ -18,7 +18,15 @@
             class="table__menu-item table__menu-item--active"
             @click="SORT_LIST"
           >
-            Дата <i class="fas fa-sort-amount-down"></i>
+            Дата 
+            <i
+              v-if="!toBig"
+              class="fas fa-sort-amount-down"
+            />
+            <i
+              v-if="toBig"
+              class="fas fa-sort-amount-down-alt"
+            />
           </p>
           <p class="table__menu-item">
             Тип
@@ -56,7 +64,7 @@ export default {
     this.GET_DATA_LIST()
   },
   computed: {
-    ...mapState(['list']),
+    ...mapState(['toBig']),
     ...mapGetters(['getPaginationData'])
   },
   methods: {

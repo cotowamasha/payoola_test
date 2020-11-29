@@ -9,7 +9,7 @@ export default new Vuex.Store({
     list: [],
     pageNumber: 0,
     count: 9,
-    pages: []
+    toBig: 0
   },
   mutations: {
     GET_DATA_LIST (state) {
@@ -25,15 +25,29 @@ export default new Vuex.Store({
       state.pageNumber--
     },
     SORT_LIST (state) {
-      state.list = state.list.sort((a, b) => {
-        a = a.date.split('.')
-        a = [a[1], a[0]].concat(a.splice(2, a.length)).join('.')
-
-        b = b.date.split('.')
-        b = [b[1], b[0]].concat(b.splice(2, b.length)).join('.')
-
-        return new Date(b) - new Date(a)
-      })
+      if (state.toBig) {
+        state.toBig = 0
+        state.list = state.list.sort((a, b) => {
+          a = a.date.split('.')
+          a = [a[1], a[0]].concat(a.splice(2, a.length)).join('.')
+  
+          b = b.date.split('.')
+          b = [b[1], b[0]].concat(b.splice(2, b.length)).join('.')
+  
+          return new Date(a) - new Date(b)
+        })
+      } else {
+        state.toBig = 1
+        state.list = state.list.sort((a, b) => {
+          a = a.date.split('.')
+          a = [a[1], a[0]].concat(a.splice(2, a.length)).join('.')
+  
+          b = b.date.split('.')
+          b = [b[1], b[0]].concat(b.splice(2, b.length)).join('.')
+  
+          return new Date(b) - new Date(a)
+        })
+      }
     }
   },
   getters: {
